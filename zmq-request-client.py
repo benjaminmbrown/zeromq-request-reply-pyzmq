@@ -17,17 +17,17 @@ if len(sys.argv) > 2:
 	print "sending request onport" + port1
 	int(port1)
 
-
 context = zmq.Context()
-#create REQ socket from the context
+#create REQ socket from the contex
+print "connecting to server ..."
 socket = context.socket(zmq.REQ)
 
 #connect socket to port
 #we created two server ports, this single socket
 #is able to connect to both
-socket.bind("tcp://localhost:%s" % port)
+socket.connect("tcp://localhost:%s" % port)
 if len(sys.argv)>2:
-	socket.connect("tcp://localhost%s" % port1)
+	socket.connect("tcp://localhost:%s" % port1)
 
 
 for request in range (1,100):

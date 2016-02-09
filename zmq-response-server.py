@@ -7,7 +7,7 @@ import sys
 port = "5556"
 
 #we want to run the server on multiple ports(so request can be distributed)
-if len(sys.argv) >1;
+if len(sys.argv) >1:
 	port = sys.argv[1]
 	print port
 	int(port)
